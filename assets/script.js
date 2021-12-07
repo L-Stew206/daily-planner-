@@ -2,15 +2,49 @@ console.log("welcome");
 
 // Varibles
 
+// var saveBtn = $(".savebtn")
 var today = $("#currentDay")
 var now = moment().format("dddd, MMM Do YYYY [at] h:mm:ss a");
 $('#currentDay').text(now);
+var plans;
+var storedPlans = localStorage.getItem("plans");
 
-// live clock telling date & time
+// Turning on saved button response
+
+$(".saveBtn").on('click', savePlans);
+
+//  Checking if anyting was entered into times, if not, nothing gets saved. Anyting else will be saved
+
+function initialPage() {
+    if (!storedPlans) {
+        plans = {};
+    } else {
+        plans = JSON.parse(storedPlans);
+        console.log(plans);
+    }
+}
+
+//  Storing plans into the storage
+
+function savePlans(event) {
+    var content = $(event.target);
+    var test = clickedButton.attr("id");
+    var savedPlan = content.parent().siblings("textarea").val();
+    plans[test] = savedPlan;
+    console.log(savedPlan);
+    localStorage.setItem("plans", JSON.stringify(savedPlan));
+}
+
+
+
+// Live clock telling date & time
+
 setInterval(function () {
     var now = moment().format("dddd, MMM Do YYYY [at] h:mm:ss a");
     $('#currentDay').text(now);
 }, 1000);
+
+// Gives color to time slots dependind on the current hours status
 
 function color() {
     $("textarea").each(function () {
@@ -20,20 +54,21 @@ function color() {
         if (time === hour) {
             $(this).addClass("present")
         }
-        else if (time < hour) {
-            $(this).addClass("future") 
-            } 
+        else if (time > hour) {
+            $(this).addClass("future")
+        }
         else {
             $("past")
         }
     })
-                
-            
-
-
-
 }
+
+
+
+// Generates functions 
+
 color();
+initialPage();
 
 
 

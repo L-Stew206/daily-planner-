@@ -67,12 +67,13 @@ main {
   .time-block {
     text-align: center;
     border-radius: 15px;
-    /* padding-top: 10px;
-    padding-left: 20px; */
-    border-right: 1px solid black;
+    padding-top: 10px;
+    padding-left: 20px; 
+     border-right: 1px solid black;
     border-bottom: 1px solid black;
     min-width: 75px;
     text-align: right;
+    color: black; 
 }
 
 .top {
