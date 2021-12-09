@@ -24,4 +24,7 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 
-![screenshot of link](Screen Shot 2021-12-06 at 11.48.30 PM.png) 
+
+
+![text](planner.png)
+supposing your repo has latest.png inside the screenshots folder.

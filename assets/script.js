@@ -5,8 +5,7 @@ console.log("wtf");
 var today = $("#currentDay")
 var now = moment().format("dddd, MMM Do YYYY [at] h:mm:ss a");
 $('#currentDay').text(now);
-var plans;
-var storedPlans = localStorage.getItem("plans");
+var plans = []
 
 // Turning on saved button response
 
@@ -15,8 +14,9 @@ $(".saveBtn").on('click', savePlans);
 //  Checking if anyting was entered into times, if not, nothing gets saved. Anyting else will be saved
 
 function initialPage() {
+    var storedPlans = localStorage.getItem("plans");
     if (!storedPlans) {
-        plans = {};
+        plans = [];
     } else {
         plans = JSON.parse(storedPlans);
         console.log(plans);
@@ -27,7 +27,9 @@ function initialPage() {
 
 function savePlans(event) {
     var content = $(event.target);
+    console.log(content)
     var test = content.attr("id");
+    console.log(test)
     var savedPlan = content.parent().siblings("textarea").val();
     plans[test] = savedPlan;
     localStorage.setItem("plans", JSON.stringify(savedPlan));
