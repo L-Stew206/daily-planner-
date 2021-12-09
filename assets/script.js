@@ -68,6 +68,11 @@ function color() {
 
 color();
 initialPage();
+            
+
+
+
+
 
 
 
