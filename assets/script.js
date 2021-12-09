@@ -1,8 +1,7 @@
-console.log("welcome");
+console.log("wtf");
 
 // Varibles
 
-// var saveBtn = $(".savebtn")
 var today = $("#currentDay")
 var now = moment().format("dddd, MMM Do YYYY [at] h:mm:ss a");
 $('#currentDay').text(now);
@@ -28,11 +27,11 @@ function initialPage() {
 
 function savePlans(event) {
     var content = $(event.target);
-    var test = clickedButton.attr("id");
+    var test = content.attr("id");
     var savedPlan = content.parent().siblings("textarea").val();
     plans[test] = savedPlan;
-    console.log(savedPlan);
     localStorage.setItem("plans", JSON.stringify(savedPlan));
+    console.log(savedPlan);
 }
 
 
