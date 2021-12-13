@@ -29,4 +29,4 @@ THEN the saved events persist
 ![text](planner.png)
 supposing your repo has latest.png inside the screenshots folder.
 
-Live link file:///Users/luke/Desktop/code/projects/daily-planner-/index.html
+Live link https://l-stew206.github.io/daily-planner-/
