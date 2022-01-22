@@ -1,7 +1,7 @@
 # daily-planner-
 A simple daily calendar page where you can save events thorugh out hours of the day. 
 The user has the time frame from 9am-5am to log daily events. 
-I used HTML, CSS, and Jquery to display the planner and saves information into the local storage. 
+I used HTML, CSS, Bootstrap and Jquery, to style the page's colums and to display the planner and saves information into the local storage. 
 Color will be shown the display the time of day of the event. 
 
 User Story
